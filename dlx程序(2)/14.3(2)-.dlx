@@ -1,0 +1,19 @@
+            .DATA	x30000000
+LOOKUP :    .ASCII  "0123456789ABCDEF"
+            .TEXT   
+            .GLOBAL  MAIN
+MAIN :      TRAP    x09
+            JAL     TRANSFORM
+            ADDI    R8, R4, #0
+            TRAP    x09
+            JAL     TRANSFORM
+            ADD     R4, R4, R8
+            LB      R4, LOOKUP(R4)
+            TRAP    x07
+            TRAP    x00
+TRANSFORM : SLEI    R5, R4, x39
+            BEQZ    R5, ELSE
+            SUBI    R4, R4, x30
+            RET     
+ELSE :      SUBI    R4, R4, x37
+            RET     

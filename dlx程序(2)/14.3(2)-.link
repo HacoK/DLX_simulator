@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DLXObject>
+<Data>
+	<DataTable Base='805306368' Length='16'>
+		<Symbol name='LOOKUP' isGlobal='False' isExtern='False' >0</Symbol>
+	</DataTable>
+	<DataContent>30313233343536373839414243444546</DataContent>
+</Data>
+<Text>
+
+	<TextTable Base='4294967295' Length='88'>
+		<Symbol name='MAIN' isGlobal='True' isExtern='False' >0</Symbol>
+		<Symbol name='TRANSFORM' isGlobal='False' isExtern='False' >64</Symbol>
+		<Symbol name='ELSE' isGlobal='False' isExtern='False' >80</Symbol>
+	</TextTable>
+	<TextContent>35 #9 32 TRANSFORM 1 8 4 #0 35 #9 32 TRANSFORM 0 4 4 8 25 4 4 LOOKUP 0 35 #7 35 #0 19 5 4 #57 29 5 ELSE 3 4 4 #48 33 31 3 4 4 #55 33 31 </TextContent>
+</Text>
+</DLXObject>

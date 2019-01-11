@@ -1,0 +1,23 @@
+          .data    x00003000
+          
+          .text    x40000000
+          .global  main
+main:     ADDI     R10,R10,#0
+          ADDI     R12,R0,#1
+          SLT      R11,R8,R9
+          BNEZ     R11,Decide
+          XOR      R8,R8,R9
+          XOR      R9,R8,R9
+          XOR      R8,R8,R9
+Decide:   AND      R11,R8,R12
+          BEQZ     R11,LOOP
+          ADD      R10,R10,R9
+LOOP:     SLLI     R9,R9,#1
+          SRLI     R8,R8,#1
+          SEQI     R11,R8,#0
+          BNEZ     R11,Exit
+          J        Decide
+Exit:     TRAP     x00
+
+
+          

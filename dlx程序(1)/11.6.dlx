@@ -1,0 +1,18 @@
+          .data    x30000000
+          .text    x40000000
+          .global  main
+;统计一列正整数中奇数与偶数个数（起始于x30000000，以-1结束）
+main:     ADDI     R1,R0,#0     ;R1存储奇数个数
+          ADDI     R2,R0,#0     ;R2存储偶数个数
+          LHI      R8,x3000     ;R8为指针
+LOOP:     LW       R9,x00(R8)   ;R9加载数值
+          SEQI     R10,R9,#-1
+          BNEZ     R10,Exit
+          ANDI     R10,R9,#1
+          BEQZ     R10,even
+odd:      ADDI     R1,R1,#1
+          J        NEXT
+even:     ADDI     R2,R2,#1
+NEXT:     ADDI     R8,R8,#4
+          J        LOOP
+Exit:     TRAP     x00

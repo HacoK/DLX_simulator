@@ -1,0 +1,50 @@
+            .DATA	x30000000
+ASCIIBUFF : .SPACE  11
+            .TEXT   
+            .GLOBAL  MAIN
+MAIN :      ADDI    R3, R0, ASCIIBUFF		;÷∏’Î
+            ADDI    R2, R0, #0		;binary
+            ADDI    R5, R0, #0
+INPUT :     TRAP    X09
+            SEQI    R1, R4, X0A
+            BNEZ    R1, DECIDE
+            SB      0(R3), R4
+            ADDI    R3, R3, #1
+            J       INPUT
+DECIDE :    LB      R4, ASCIIBUFF(R0)
+            SEQI    R1, R4, X78
+            BNEZ    R1, ANOTHER
+            ADDI    R4, R0, #0
+DECIMAL :   ADD     R2, R2, R4
+            SUBI    R3, R3, #1
+            ADDI    R5, R5, #1
+            ADDI    R8, R5, #0
+            SLTI    R1, R3, ASCIIBUFF
+            BNEZ    R1, EXIT
+            LB      R4, 0(R3)
+CHANGE :    SUBI    R4, R4, X30
+MUL10 :     SUBI    R8, R8, #1
+            BEQZ    R8, DECIMAL
+            SLLI    R6, R4, #3
+            SLLI    R7, R4, #1
+            ADD     R4, R6, R7
+            J       MUL10
+ANOTHER :   ADDI    R4, R0, #0
+HEXA :      ADD     R2, R2, R4
+            SUBI    R3, R3, #1
+            ADDI    R5, R5, #1
+            ADDI    R8, R5, #0
+            SEQI    R1, R3, ASCIIBUFF
+            BNEZ    R1, EXIT
+            LB      R4, 0(R3)
+            SLEI    R1, R4, X39
+            BNEZ    R1, ONE
+            J       OTHER
+ONE :       SUBI    R4, R4, X30
+MUL16 :     SUBI    R8, R8, #1
+            BEQZ    R8, HEXA
+            SLLI    R4, R4, #4
+            J       MUL16
+OTHER :     SUBI    R4, R4, X37
+            J       MUL16
+EXIT :      TRAP    HALT

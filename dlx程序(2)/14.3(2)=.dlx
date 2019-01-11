@@ -1,0 +1,25 @@
+            .DATA	x30000000
+            .ASCII  "ABCDEF"
+            .TEXT   
+            .GLOBAL  MAIN
+MAIN :      TRAP    x09
+            JAL     TRANSFORM
+            ADDI    R8, R4, #0
+            TRAP    x09
+            JAL     TRANSFORM
+            ADD     R4, R4, R8
+            JAL     BINARY2ASCII
+            TRAP    x07
+            TRAP    x00
+TRANSFORM : SLEI    R5, R4, x39
+            BEQZ    R5, ELSE
+            SUBI    R4, R4, x30
+            RET     
+ELSE :      SUBI    R4, R4, x37
+            RET     
+BINARY2ASCII :SLEI    R5, R4, #9
+            BEQZ    R5, OTHER
+            ADDI    R4, R4, x30
+            RET     
+OTHER :     ADDI    R4, R4, x37
+            RET     

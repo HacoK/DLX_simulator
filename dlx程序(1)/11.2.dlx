@@ -1,0 +1,21 @@
+;计算f(n)=f(n-1)+f(n-2),n是一个小于10的正整数
+          .data
+          .text
+;R1=n,输出到R10         
+          .global  main
+main:     ADDI     R8,R0,#0
+;f(-1)=0
+          ADDI     R9,R0,#1
+;f(0)=1
+CHECK:    SEQI     R11,R1,#0
+          BNEZ     R11,Exit
+          ADD      R10,R8,R9
+;求下一项
+          SUB      R8,R10,R8
+          ADDI     R9,R10,#0
+;更新前两项
+          SUBI     R1,R1,#1
+;计数器-1
+          J        CHECK
+Exit:     TRAP     x00
+          

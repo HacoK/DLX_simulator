@@ -1,0 +1,13 @@
+          .data
+          .text
+          .global  main
+main:     ADDI     R2,R0,#0
+          ADDI     R8,R0,#1
+Do:       AND      R9,R1,R8
+          BEQZ     R9,SR
+          ADDI     R2,R2,#1
+SR:       SRLI     R1,R1,#1
+          SEQI     R9,R1,#0
+          BNEZ     R9,Exit
+          J        Do
+Exit:     TRAP     x00

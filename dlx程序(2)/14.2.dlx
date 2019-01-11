@@ -1,0 +1,23 @@
+            .DATA	x30000000
+            .ASCIIZ "Kevin1998"
+            .BYTE   x04		;EOT
+            .TEXT   X40000000
+            .GLOBAL  MAIN
+MAIN :      LHI     R5, x3000
+START :     LB      R6, 0(R5)
+            SLTI    R8, R6, x61
+            SLEI    R9, R6, x7A
+            XORI    R8, R8, #1
+            AND     R10, R8, R9
+            BEQZ    R10, SKIP
+            JAL     TOUPPER
+SKIP :      SEQI    R10, R6, x04
+            BNEZ    R10, EXIT
+            ADDI    R5, R5, #1
+            J       START
+EXIT :      LHI     R4, x3000
+            TRAP    PUTS
+            TRAP    x00
+TOUPPER :   SUBI    R6, R6, x20
+            SB      0(R5), R6
+            RET     

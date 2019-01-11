@@ -1,0 +1,17 @@
+          .data
+          .text   x40000000
+          .global main
+;R8存储被检测字符
+main:     LHI     R9,x3000     ;R9为指针
+          ADDI    R12,R0,#0    ;R12记录次数
+LOOP:     LB      R10,x0(R9)   ;R10加载文档中字符
+          SEQ     R11,R10,R8
+          BEQZ    R11,NEXT
+          ADDI    R12,R12,#1
+NEXT:     ADDI    R9,R9,#1
+          SEQI    R11,R10,x04
+          BNEZ    R11,Exit
+          J       LOOP
+Exit:     ADDI    R4,R12,x30
+          TRAP    #07
+          TRAP    #00

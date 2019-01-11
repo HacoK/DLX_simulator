@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DLXObject>
+<Data>
+	<DataTable Base='12288' Length='0'>
+	</DataTable>
+	<DataContent></DataContent>
+</Data>
+<Text>
+
+	<TextTable Base='1073741824' Length='64'>
+		<Symbol name='MAIN' isGlobal='True' isExtern='False' >0</Symbol>
+		<Symbol name='DECIDE' isGlobal='False' isExtern='False' >28</Symbol>
+		<Symbol name='LOOP' isGlobal='False' isExtern='False' >40</Symbol>
+		<Symbol name='EXIT' isGlobal='False' isExtern='False' >60</Symbol>
+	</TextTable>
+	<TextContent>1 10 10 #0 1 12 0 #1 16 11 8 9 30 11 DECIDE 8 8 8 9 8 9 8 9 8 8 8 9 4 11 8 12 29 11 LOOP 0 10 10 9 11 9 9 #1 13 8 8 #1 21 11 8 #0 30 11 EXIT 31 DECIDE 35 #0 </TextContent>
+</Text>
+</DLXObject>

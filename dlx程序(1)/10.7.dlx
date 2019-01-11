@@ -1,0 +1,11 @@
+          .data    x00003000
+          .text    x40000000
+          .global  main
+main:     ADDI     R10,R0,#0
+          ADD      R11,R0,R9
+Loop:     SLT      R12,R11,R8
+          BNEZ     R12,Exit
+          SUB      R11,R11,R8
+          ADDI     R10,R10,#1
+          J        Loop
+Exit:     TRAP     x00

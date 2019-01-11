@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DLXObject>
+<Data>
+	<DataTable Base='805306368' Length='11'>
+		<Symbol name='ASCIIBUFF' isGlobal='False' isExtern='False' >0,1,2,3,4,5,6,7,8,9,10</Symbol>
+	</DataTable>
+	<DataContent>0000000000000000000000</DataContent>
+</Data>
+<Text>
+
+	<TextTable Base='4294967295' Length='284'>
+		<Symbol name='MAIN' isGlobal='True' isExtern='False' >0</Symbol>
+		<Symbol name='INPUT' isGlobal='False' isExtern='False' >36</Symbol>
+		<Symbol name='DECIDE' isGlobal='False' isExtern='False' >60</Symbol>
+		<Symbol name='DECIMAL' isGlobal='False' isExtern='False' >104</Symbol>
+		<Symbol name='CHANGE' isGlobal='False' isExtern='False' >156</Symbol>
+		<Symbol name='MUL10' isGlobal='False' isExtern='False' >160</Symbol>
+		<Symbol name='ANOTHER' isGlobal='False' isExtern='False' >184</Symbol>
+		<Symbol name='HEXA' isGlobal='False' isExtern='False' >188</Symbol>
+		<Symbol name='ONE' isGlobal='False' isExtern='False' >252</Symbol>
+		<Symbol name='MUL16' isGlobal='False' isExtern='False' >256</Symbol>
+		<Symbol name='OTHER' isGlobal='False' isExtern='False' >272</Symbol>
+		<Symbol name='EXIT' isGlobal='False' isExtern='False' >280</Symbol>
+	</TextTable>
+	<TextContent>1 3 0 ASCIIBUFF 0 1 2 0 #0 1 5 0 #0 35 #9 21 1 4 #10 30 1 DECIDE 26 4 3 #0 1 3 3 #1 31 INPUT 25 4 0 ASCIIBUFF 0 21 1 4 #120 30 1 ANOTHER 1 4 0 #0 0 2 2 4 3 3 3 #1 1 5 5 #1 1 8 5 #0 17 1 3 ASCIIBUFF 0 30 1 EXIT 25 4 3 #0 3 4 4 #48 3 8 8 #1 29 8 DECIMAL 11 6 4 #3 11 7 4 #1 0 4 6 7 31 MUL10 1 4 0 #0 0 2 2 4 3 3 3 #1 1 5 5 #1 1 8 5 #0 21 1 3 ASCIIBUFF 0 30 1 EXIT 25 4 3 #0 19 1 4 #57 30 1 ONE 31 OTHER 3 4 4 #48 3 8 8 #1 29 8 HEXA 11 4 4 #4 31 MUL16 3 4 4 #55 31 MUL16 35 #0 </TextContent>
+</Text>
+</DLXObject>
